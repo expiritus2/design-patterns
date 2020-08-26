@@ -1,5 +1,4 @@
 class Car {
-
 	constructor() {
 		this.autoPilot = false;
 		this.parktronic = false;
@@ -26,7 +25,7 @@ class CarBuilder {
 		this.car.signaling = signaling;
 		return this;
 	}
-  
+
 	updateEngine(engine) {
 		this.car.engine = engine;
 		return this;
@@ -36,3 +35,11 @@ class CarBuilder {
 		return this.car;
 	}
 }
+
+const myCar = new CarBuilder()
+	.addAutoPilot(true)
+	.addParktronic(true)
+	.updateEngine('V8')
+	.build();
+
+console.log(myCar);

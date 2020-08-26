@@ -1,21 +1,19 @@
 class Car {
-
 	constructor() {
 		this.price = 10000;
 		this.model = 'Car'
 	}
-  
+
 	getPrice() {
 		return this.price;
 	}
-  
+
 	getDescription() {
 		return this.model
 	}
 }
 
 class Tesla extends Car {
-
 	constructor() {
 		super();
 		this.price = 25000;
@@ -26,12 +24,12 @@ class Tesla extends Car {
 class Autopilot {
 	constructor(car) {
 		this.car = car;
-  	}
+ 	}
 
 	getPrice() {
 		return this.car.getPrice() + 5000;
 	}
-  
+
 	getDescription() {
 		return `${this.car.getDescription()} with autopilot`;
 	}
@@ -45,8 +43,19 @@ class Parktronic {
 	getPrice() {
 		return this.car.getPrice() + 3000;
 	}
-  
+
 	getDescription() {
 		return `${this.car.getDescription()} with parktronic`;
 	}
 }
+
+let tesla = new Tesla();
+tesla = new Autopilot(tesla);
+tesla = new Parktronic(tesla);
+
+console.log(tesla.getPrice(), tesla.getDescription());
+
+let tesla2 = new Tesla();
+tesla = new Autopilot(tesla2);
+
+console.log(tesla2.getPrice(), tesla.getDescription());

@@ -17,7 +17,7 @@ class Account {
 	setNext(account) {
 		this.incomer = account;
 	}
-};
+}
 
 class Master extends Account {
 	constructor(balance) {

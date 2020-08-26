@@ -6,7 +6,7 @@ class CarAccess {
 	close() {
 		console.log('Closing the car door')
 	}
-};
+}
 
 class SecuritySystem {
 	constructor(door) {
@@ -28,4 +28,9 @@ class SecuritySystem {
 	close() {
 		this.door.close()
 	}
-};
+}
+
+const door = new SecuritySystem(new CarAccess());
+door.open('Jack'); // Access denied!
+door.open('Ilon'); // Opening car dor
+door.close(); // Closing the car door
