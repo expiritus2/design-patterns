@@ -10,7 +10,7 @@ class EngineV8Adapter {
 	constructor(engine) {
 		this.engine = engine;
 	}
-     
+
 	simpleInterface() {
 		this.engine.complecatedInterface();
 	}
@@ -21,3 +21,13 @@ class Auto {
 		engine.simpleInterface()
 	}
 }
+
+const myCar = new Auto();
+const oldEngine = new Engine2();
+
+myCar.startEngine(oldEngine);
+
+const myCar1 = new Auto();
+const engineAdapter = new EngineV8Adapter(new EngineV8());
+
+myCar1.startEngine(engineAdapter);

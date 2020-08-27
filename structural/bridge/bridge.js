@@ -2,7 +2,7 @@ class Model {
 	constructor(color) {
 		this.color = color;
 	}
-};
+}
 
 class Color {
 	constructor(type) {
@@ -11,7 +11,7 @@ class Color {
 	get() {
 		return this.type;
 	}
-};
+}
 
 class BlackColor extends Color {
 	constructor() {
@@ -33,7 +33,7 @@ class Audi extends Model {
 	paint() {
 		return `Auto: Audi, Color: ${this.color.get()}`;
 	}
-};
+}
 
 class Bmw extends Model {
 	constructor(color) {
@@ -43,4 +43,8 @@ class Bmw extends Model {
 	paint() {
 		return `Auto: Bmw, Color: ${this.color.get()}`;
 	}
-};
+}
+
+const blackBmw = new Bmw(new BlackColor());
+
+console.log(blackBmw.paint());
