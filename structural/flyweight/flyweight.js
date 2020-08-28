@@ -5,14 +5,29 @@ class Auto {
 }
 
 class AutoFactory {
-	constructor(name) {
+	constructor() {
 		this.models = {};
 	}
 
-	create(name) {
-		let model = this.models[name];
+	create(modelName) {
+		let model = this.models[modelName];
 		if (model) return model;
-		this.models[name] = new Auto(name);
-		return this.models[name];
+		this.models[model] = new Auto(model);
+		return this.models[model];
 	}
-};
+
+	getModels() {
+		return this.models;
+	}
+}
+
+const factory = new AutoFactory();
+
+const bmw = factory.create('BMW');
+const audy = factory.create('Audi');
+const tesla = factory.create('Tesla');
+const blackTesla = factory.create('Tesla');
+
+console.log(factory.getModels());
+
+

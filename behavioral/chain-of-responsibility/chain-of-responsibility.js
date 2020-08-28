@@ -17,6 +17,10 @@ class Account {
 	setNext(account) {
 		this.incomer = account;
 	}
+
+	show() {
+		console.log(this);
+	}
 }
 
 class Master extends Account {
@@ -25,7 +29,7 @@ class Master extends Account {
 		this.name = 'Master Card';
 		this.balance = balance;
   }
-};
+}
 
 class Paypal extends Account {
 	constructor(balance) {
@@ -33,7 +37,7 @@ class Paypal extends Account {
 		this.name = 'Paypal';
 		this.balance = balance;
     }
-};
+}
 
 class Qiwi extends Account {
 	constructor(balance) {
@@ -41,4 +45,15 @@ class Qiwi extends Account {
 		this.name = 'Qiwi';
 		this.balance = balance;
 	}
-};
+}
+
+const master = new Master(100);
+const paypal = new Paypal(200);
+const qiwi = new Qiwi(500);
+
+master.setNext(paypal);
+paypal.setNext(qiwi);
+
+master.pay(438);
+
+master.show();

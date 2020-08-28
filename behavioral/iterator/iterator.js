@@ -11,12 +11,12 @@ class ArrayIterator {
 	hasNext() {
 		return this.index < this.elements.length;
 	}
-};
+}
 
 class ObjectIterator {
 	constructor(el) {
 		this.index = 0;
-		this.keys = Object.keys(el),
+		this.keys = Object.keys(el);
 		this.elements = el;
 	}
 
@@ -27,4 +27,10 @@ class ObjectIterator {
 	hasNext() {
 		return this.index < this.keys.length;
 	}
-};
+}
+
+const collection = new ArrayIterator(['Audi', 'BMW', 'Tesla', 'Mersedes']);
+
+while (collection.hasNext()) {
+	console.log(collection.next());
+}
