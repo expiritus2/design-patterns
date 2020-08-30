@@ -2,7 +2,7 @@ class Memento {
 	constructor(value) {
 		this.value = value;
 	}
-};
+}
 
 const creator = {
 	save: val => new Memento(val),
@@ -21,4 +21,12 @@ class Caretaker {
 	getMemento(index) {
 		return this.values[index];
 	}
-};
+}
+
+const careTaker = new Caretaker();
+
+careTaker.addMemento(creator.save('hello'));
+careTaker.addMemento(creator.save('hello world'));
+careTaker.addMemento(creator.save('hello world !!!'));
+
+console.log(creator.restore(careTaker.getMemento(1)));

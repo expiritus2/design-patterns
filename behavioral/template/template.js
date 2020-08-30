@@ -5,7 +5,7 @@ class Builder {
 		this.addElectronic();
 		this.collectAccessories();
 	}
-};
+}
 
 class TeslaBuilder extends Builder {
 	addEngine() {
@@ -42,3 +42,12 @@ class BmwBuilder extends Builder {
 		console.log('Collect Accessories');
 	}
 }
+
+const teslaBuilder = new TeslaBuilder();
+const bmwBuilder = new BmwBuilder();
+
+teslaBuilder.build();
+
+bmwBuilder.build();
+
+

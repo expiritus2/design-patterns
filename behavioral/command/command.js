@@ -6,7 +6,7 @@ class Driver {
 	execute() {
 		this.command.execute();
 	}
-};
+}
 
 class Engine {
 	constructor() {
@@ -20,7 +20,7 @@ class Engine {
 	off() {
 		this.state = false;
 	}
-};
+}
 
 class OnStartCommand {
 	constructor(engine) {
@@ -30,7 +30,7 @@ class OnStartCommand {
 	execute() {
 		this.engine.on();
 	}
-};
+}
 
 class onSwitchOffCommand {
 	constructor(engine) {
@@ -40,4 +40,14 @@ class onSwitchOffCommand {
 	execute() {
 		this.engine.off();
 	}
-};
+}
+
+const engine = new Engine();
+
+console.log(engine);
+
+const onStartCommand = new OnStartCommand(engine);
+const driver = new Driver(onStartCommand);
+driver.execute();
+
+console.log(engine);

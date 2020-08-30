@@ -36,3 +36,12 @@ class Order {
 		this.state = this.state.next();
 	};
 }
+
+const myOrder = new Order();
+console.log(myOrder.state.name);
+
+myOrder.nextState();
+console.log(myOrder.state.name);
+
+myOrder.nextState();
+console.log(myOrder.state.name);
